@@ -8,7 +8,11 @@ describe ProcessoUtilities::ProcessoFormatter do
   end
 
   it "insere a formatação do processo" do
+    expect { ProcessoUtilities::ProcessoFormatter.insere_formatacao(nil)}.to raise_error
+    expect { ProcessoUtilities::ProcessoFormatter.insere_formatacao("000889038201350400")}.to raise_error
     expect(ProcessoUtilities::ProcessoFormatter.insere_formatacao("00088903820135040000")).to eql("0008890-38.2013.5.04.0000")
   end
+
+
   
 end
