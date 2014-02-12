@@ -13,7 +13,10 @@ describe ProcessoUtilities::CpfUtilities do
     expect(ProcessoUtilities::CpfUtilities.insere_formatacao("80131878611")).to eql("801.318.786-11")
   end
 
-  it "valida o cpf"
+  it "valida o cpf" do
+    expect(ProcessoUtilities::CpfUtilities.cpf_valido?("801.318.786-11")).to be_true
+    expect(ProcessoUtilities::CpfUtilities.cpf_valido?("801.318.785-11")).to be_false
+  end
 
   
 end
