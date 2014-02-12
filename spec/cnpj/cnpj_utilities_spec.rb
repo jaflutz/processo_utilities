@@ -13,7 +13,10 @@ describe ProcessoUtilities::CnpjUtilities do
     expect(ProcessoUtilities::CnpjUtilities.insere_formatacao("36463891000160")).to eql("36.463.891/0001-60")
   end
 
-  it "valida o cnpj"
+  it "valida o cnpj" do
+    expect(ProcessoUtilities::CnpjUtilities.cnpj_valido?("36.463.891/0001-60")).to be_true
+    expect(ProcessoUtilities::CnpjUtilities.cnpj_valido?("36.463.892/0001-60")).to be_false
+  end
 
   
 

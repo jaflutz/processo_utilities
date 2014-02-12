@@ -19,17 +19,17 @@ module ProcessoUtilities
       false
     end
 
-    def self.tamanho_valido?(cpf)
-      raise "Tamanho do cpf inválido" unless cpf.length == 11
-    end
-
     def self.calcula_digito_verificador(cpf)
-      primeiro_digito = calcula_digito_verificador_individual(cpf, 10)
-      segundo_digito = calcula_digito_verificador_individual(cpf, 11)
+      primeiro_digito = calcula_digito_verificador_individual(cpf[0..8], 10)
+      segundo_digito = calcula_digito_verificador_individual(cpf[0..8] + primeiro_digito.to_s, 11)
       primeiro_digito.to_s + segundo_digito.to_s
     end
 
     private
+
+    def self.tamanho_valido?(cpf)
+      raise "Tamanho do cpf inválido" unless cpf.length == 11
+    end
 
     def self.calcula_digito_verificador_individual(cpf, max)
       soma_total = 0
@@ -48,11 +48,7 @@ module ProcessoUtilities
       end
 
       digito_calculado
-    end
-
-
-
-    
+    end    
     
   end
 end
