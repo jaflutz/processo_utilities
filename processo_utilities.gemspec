@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = 'Processo Utilities'
   s.summary = s.description
   s.email = 'jaflutz@gmail.com'
-  s.files = ['README.rdoc', 'lib/processo_utilities.rb', 'lib/processo/processo_formatter.rb', 'spec/processo/processo_formatter_spec.rb', 
+  s.files = ['README.md', 'lib/processo_utilities.rb', 'lib/processo/processo_formatter.rb', 'spec/processo/processo_formatter_spec.rb', 
               'lib/cpf/cpf_utilities.rb', 'lib/cnpj/cnpj_utilities.rb', 'spec/cpf/cpf_utilities_spec.rb', 'spec/cnpj/cnpj_utilities_spec.rb']
   s.homepage = 'http://github.com/jaflutz'
   s.has_rdoc = true
