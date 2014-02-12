@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "processo_utilities"
-  s.version = "0.0.4"
+  s.version = "0.0.5"
   s.authors = ["João Adolfo Froede Lutz"]
   s.date = %q{2014-02-10}
   s.description = 'Processo Utilities'

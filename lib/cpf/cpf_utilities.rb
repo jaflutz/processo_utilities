@@ -2,10 +2,11 @@ module ProcessoUtilities
   class CpfUtilities
 
     def self.remove_formatacao(cpf)
-      cpf.gsub(/[-\. ]/, '')
+      cpf.gsub(/[-\. \D]/, '')
     end
 
     def self.insere_formatacao(cpf)
+      cpf = remove_formatacao(cpf)
       tamanho_valido?(cpf)  
       cpf.insert(9, '-').insert(6, '.').insert(3, '.')
     end

@@ -2,10 +2,11 @@ module ProcessoUtilities
   class CnpjUtilities
 
     def self.remove_formatacao(cnpj)
-      cnpj.gsub(/[-\. \/]/, '')
+      cnpj.gsub(/[-\. \/\D]/, '')
     end
 
     def self.insere_formatacao(cnpj)
+      cnpj = remove_formatacao(cnpj)
       tamanho_valido?(cnpj)
       cnpj.insert(12, '-').insert(8, '/').insert(5, '.').insert(2, '.')      
     end
